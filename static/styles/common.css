@@ -1,0 +1,32 @@
+.bar {
+	width: 1100px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+    justify-content: space-between;
+	background: #dc143c;
+	padding-left:25px;
+	padding-right:25px;
+	border-radius: 25px 25px 25px 25px;
+}
+.bar_element{
+	width: 80px;
+	text-align: center;
+	padding: 16px;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+}
+.bar_element:hover{
+	background: #ff4364;
+}
+.content {
+  background: #f5f5dc;
+  width: 1050px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

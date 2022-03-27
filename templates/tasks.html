@@ -1,0 +1,7 @@
+{% extends 'task_base.html' %}
+
+{% block content %}
+{% for el in tasks %}
+<div class="task"><a href="tasks/{{ el.id }}">{{ el.name }}</a></div>
+{% endfor %}
+{% endblock %}
