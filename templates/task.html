@@ -5,4 +5,23 @@
 {% endblock %}
 
 {% block content %}
+<div class="text-center p-4">
+    <h3 class="m-3">{{task.name}}</h3>
+    <p class="m-4" style="white-space: pre-line">{{task.text}}</p>
+    {% if time is defined %}
+    <div class="alert alert-success w-50 m-auto" role="alert">
+        <h5>You have already solved this task</h5>
+        <p>{{ time }}</p>
+    </div>
+    {% else %}
+    <p class="m-2">Your answer:</p>
+    <form method="post">
+        <div class="d-flex justify-content-center">
+            <textarea class="form-control m-3 w-50 m-auto" placeholder="Type here" required name="answer" rows="3"></textarea>
+        </div>
+        <p class="text-danger">{{ error }}</p>
+        <button class="btn btn-primary" type="submit">Check</button>
+    </form>
+    {% endif %}
+</div>
 {% endblock %}

@@ -1,5 +1,4 @@
 from flask import Flask
-
 from db import db
 from routes import blueprint
 

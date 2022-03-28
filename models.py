@@ -1,3 +1,4 @@
+from sqlalchemy import ForeignKey, PrimaryKeyConstraint, func
 from db import db
 
 
@@ -19,3 +20,11 @@ class User(db.Model):
 
     def __repr__(self):
         return '<Task %r>' % self.id
+
+
+class Completed(db.Model):
+    user_id = db.Column(db.Integer, ForeignKey(User.id), nullable=False)
+    task_id = db.Column(db.Integer, ForeignKey(Task.id), nullable=False)
+    time = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (PrimaryKeyConstraint(user_id, task_id),)
