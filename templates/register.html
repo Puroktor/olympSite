@@ -2,16 +2,18 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static',filename='login.css') }}">
-<title>Login</title>
+<title>Register</title>
 {% endblock %}
 
 {% block content %}
 <div class="h-100 row align-items-center m-0">
     <div class="col text-center">
-        <h2>Login</h2>
-        <h4 class="mb-4">(or <a class="link-primary" href="/register">register</a>)</h4>
+        <h2>Register</h2>
+        <h4 class="mb-4">(or <a class="link-primary" href="/login">login</a>)</h4>
         <form method="post">
             <input class="m-3 p-1" placeholder="Username" required name="name">
+            <br>
+            <input class="m-3 p-1" placeholder="Email" required name="email">
             <br>
             <input class="m-3 p-1" placeholder="Password" required name="password">
             <p class="text-danger">{{ error }}</p>

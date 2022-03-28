@@ -1,7 +1,13 @@
-{% extends 'task_base.html' %}
+{% extends 'header.html' %}
+
+{% block head %}
+<title>Tasks</title>
+{% endblock %}
 
 {% block content %}
 {% for el in tasks %}
-<div class="task"><a href="tasks/{{ el.id }}">{{ el.name }}</a></div>
+<div class="d-flex justify-content-center bg-secondary m-5 p-3">
+    <a class="text-white" href="tasks/{{ el.id }}">{{ el.name }}</a>
+</div>
 {% endfor %}
 {% endblock %}

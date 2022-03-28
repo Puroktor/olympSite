@@ -1,6 +1,8 @@
-{% extends 'task_base.html' %}
+{% extends 'header.html' %}
+
+{% block head %}
+<title>Task</title>
+{% endblock %}
 
 {% block content %}
-<h1>{{task.name}}</h1>
-<p>{{task.text}}</p>
 {% endblock %}
