@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+
+{% block head %}
+<title>Leaderboard</title>
+{% endblock %}
+
+{% block content %}
+<table class="table table-bordered mt-3">
+    <thead>
+    <tr class="table-secondary">
+        <th style="width: 12.5%" scope="col">&nbsp;</th>
+        {% for t in tasks %}
+        <th style="width: {{ 87.5/tasks|length }}%" class="text-center align-middle" scope="col">
+            <a href="tasks/{{ t.id }}">{{ t.name }}</a>
+        </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for u in users %}
+    <tr class="{% if u.name == user %} table-info {% endif %}">
+        <th class="text-center align-middle" scope="row">{{ u.name }}</th>
+        {% for t in tasks %}
+            {% if (u.id, t.id) in dict %}
+            <td class="text-center align-middle bg-success text-light">
+                <b>+</b>
+                <br>
+                <i>{{ dict.get((u.id, t.id)) }}</i>
+            </td>
+            {% else %}
+            <td></td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

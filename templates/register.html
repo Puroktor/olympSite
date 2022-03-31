@@ -11,11 +11,11 @@
         <h2>Register</h2>
         <h4 class="mb-4">(or <a class="link-primary" href="/login">login</a>)</h4>
         <form method="post">
-            <input class="m-3 p-1" placeholder="Username" required name="name">
+            <input class="m-3 p-1" placeholder="Username" required name="name" value="{{ name }}">
             <br>
-            <input class="m-3 p-1" placeholder="Email" required name="email">
+            <input class="m-3 p-1" placeholder="Email" required name="email" value="{{ email }}">
             <br>
-            <input class="m-3 p-1" placeholder="Password" required name="password">
+            <input class="m-3 p-1" type="password" placeholder="Password" required name="password" value="{{ password }}">
             <p class="text-danger">{{ error }}</p>
             <button class="btn btn-primary m-2" type="submit">Submit</button>
         </form>
