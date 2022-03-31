@@ -8,7 +8,7 @@
 <div class="text-center p-4">
     <h3 class="m-3">{{task.name}}</h3>
     <p class="m-4" style="white-space: pre-line">{{task.text}}</p>
-    {% if time is not none %}
+    {% if time is defined %}
     <div class="alert alert-success w-50 m-auto" role="alert">
         <h5>You have already solved this task</h5>
         <p>{{ time }}</p>
