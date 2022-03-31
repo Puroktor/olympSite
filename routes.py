@@ -11,7 +11,7 @@ blueprint = Blueprint('controllers', __name__, template_folder='templates')
 
 @blueprint.route('/')
 def index():
-    return render_template('index.html', user=session.get('user', None))
+    return render_template('index.html', user=session.get('user'))
 
 
 @blueprint.route('/tasks')
