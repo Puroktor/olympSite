@@ -10,11 +10,11 @@ app.config.from_mapping(
 )
 app.register_blueprint(blueprint)
 db.init_app(app)
-
+"""
 with app.app_context():
     db.create_all()
     db.session.commit()
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
