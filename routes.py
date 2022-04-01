@@ -26,7 +26,7 @@ def task(task_id):
         return redirect('/login')
     else:
         try:
-            olymp_task = db.session.query(Task.name, Task.text).filter(Task.id == task_id).one()
+            olymp_task = Task.query.filter(Task.id == task_id).one()
         except NoResultFound:
             return "No such task!", 400
         user_id, = db.session.query(User.id).filter(User.name == session.get('user')).one()
